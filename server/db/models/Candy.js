@@ -4,10 +4,16 @@ const db = require('../database');
 module.exports = db.define('candy', {
   name: {
     type: Sequelize.STRING,
+    validate: {
+      notEmpty: true
+    },
     allowNull: false
   },
   description: {
     type: Sequelize.TEXT,
+    validate: {
+      notEmpty: true
+    },
     allowNull: false
   },
   quantity: {
